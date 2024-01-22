@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Play&family=Press+Start+2P&display=swap');
 
 #gameButton {
+    max-width: 150px;
     position: fixed;
     top: 33%;
     left: 33%;
     font-family: 'Play', sans-serif;
+    padding: 7px;
+    border-radius: 7px;
 }
 
 #progressBar {
@@ -12,7 +15,6 @@
     top: 63.2%;
     left: 27%;
     background-color: lightgreen;
-    width: 40.2%;
     height: 50px;
     z-index: -2;
 }
@@ -28,7 +30,7 @@
 
 #score {
     position: fixed;
-    top: 33%;
-    left: 33%;
+    top: 70%;
+    left: 27%;
     font-family: 'Press Start 2P', system-ui;
 }
