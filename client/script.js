@@ -10,19 +10,21 @@ let words = "";
 
 let points = 0;
 
-function JSON() {
-    const url = 'words.json/words';
+function ajax() {
+    const url = 'words.json';
+    const conexion = new XMLHttpRequest();
+    conexion.open("GET", url, false);
+    conexion.send();
 
-    const request = new XMLHttpRequest();
-    request.open('GET', url, false);
-    request.send();
-
-    if (request.status >= 200 && request.status < 300) {
-        const data = JSON.parse(request.responseText);
-        console.log(data);
-        words = data;
-    }
+    conexion.addEventListener("load", e => {
+        if (conexion.status >= 200 && conexion.status < 300) {
+            const data = JSON.parse(conexion.responseText);
+            console.log(data);
+        }
+    });
 }
+
+ajax();
 
 function Game() {
     let gameButton = document.createElement("button");
