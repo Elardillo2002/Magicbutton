@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dcbd248-9be9-4adc-a145-da7b5c1fff77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/model/Connection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/model/Player.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/model/Query.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/sql/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Player.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/model/Query.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/Query.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +54,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -86,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705562456765</updated>
       <workItem from="1705562461992" duration="1575000" />
-      <workItem from="1705912278772" duration="6763000" />
+      <workItem from="1705912278772" duration="7054000" />
     </task>
     <servers />
   </component>

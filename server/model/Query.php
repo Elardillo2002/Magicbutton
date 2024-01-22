@@ -95,9 +95,7 @@ class Query
         $this->_result->execute();
 
         $this->getConnection()->close();
-
-
-
+        return $this->_result;
     }
 
     public function update(string $query, array $params)
