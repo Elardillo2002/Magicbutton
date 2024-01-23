@@ -26,11 +26,15 @@ function ajax(options) {
 ajax({
     url: "http://localhost:3000/words", success: (response) => {
         buttonWord(response);
-        Game();
     }
 });
 
 function buttonWord(response) {
+
+    // response.forEach(element => {
+    //     words = element.words[0].text;
+    // });
+
     const index = Math.floor(Math.random() * response.length);
     words = response[index].text;
 }
@@ -78,5 +82,5 @@ function click() {
 }
 
 // setInterval(click, 500);
-//
-// Game();
+
+Game();
