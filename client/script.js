@@ -10,7 +10,7 @@ let points = 0;
 let words = "";
 
 function ajax(options) {
-    const { url, method, success, data } = options;
+    const {url, method, success, data} = options;
     const conexion = new XMLHttpRequest();
     conexion.addEventListener("load", e => {
         if (conexion.status >= 200 && conexion.status < 300) {
@@ -22,15 +22,17 @@ function ajax(options) {
     conexion.send(JSON.stringify(data));
 }
 
+
 ajax({
-    url: "http://localhost:3000",
-    success: (response) => buttonWord(response)
+    url: "http://localhost:3000/words", success: (response) => {
+        buttonWord(response);
+        Game();
+    }
 });
 
 function buttonWord(response) {
-    response.forEach(element => {
-        words = element.words[0].text;
-    });
+    const index = Math.floor(Math.random() * response.length);
+    words = response[index].text;
 }
 
 function Game() {
@@ -50,7 +52,7 @@ function Game() {
     progressBar.style.width = `${deadChanceBar}%`;
     progressBar.id = "progressBar";
     progress.id = "progress";
-    
+
     score.id = "score";
     score.textContent = `SCORE: 00000000`;
 
@@ -76,5 +78,5 @@ function click() {
 }
 
 // setInterval(click, 500);
-
-Game();
+//
+// Game();
