@@ -6,22 +6,37 @@
 
 let deadChance = 100;
 let deadChanceBar = deadChance * 0.4 + 0.2;
+let points = 0;
 let words = "";
 
-let points = 0;
+function ajax(options) {
+    const {url, method, success, data} = options;
+    const conexion = new XMLHttpRequest();
+    conexion.addEventListener("load", e => {
+        if (conexion.status >= 200 && conexion.status < 300) {
+            success(JSON.parse(conexion.response));
+        }
+    });
+    conexion.open(method || "GET", url, false);
+    conexion.setRequestHeader("Content-type", "application/json; charset=utf-8");
+    conexion.send(JSON.stringify(data));
+}
 
-function JSON() {
-    const url = 'words.json/words';
 
-    const request = new XMLHttpRequest();
-    request.open('GET', url, false);
-    request.send();
-
-    if (request.status >= 200 && request.status < 300) {
-        const data = JSON.parse(request.responseText);
-        console.log(data);
-        words = data;
+ajax({
+    url: "http://localhost:3000/words", success: (response) => {
+        buttonWord(response);
     }
+});
+
+function buttonWord(response) {
+
+    // response.forEach(element => {
+    //     words = element.words[0].text;
+    // });
+
+    const index = Math.floor(Math.random() * response.length);
+    words = response[index].text;
 }
 
 function Game() {
@@ -29,15 +44,19 @@ function Game() {
     let progressBar = document.createElement("div");
     let progress = document.createElement("div");
     let score = document.createElement("h3");
+    let top = Math.floor(Math.random() * (56 - 10) + 10);
+    let left = Math.floor(Math.random() * (59 - 27) + 27);
 
     gameButton.id = "gameButton";
     gameButton.textContent = words;
+    gameButton.style.top = `${top}%`;
+    gameButton.style.left = `${left}%`;
     gameButton.addEventListener("click", click);
 
     progressBar.style.width = `${deadChanceBar}%`;
     progressBar.id = "progressBar";
     progress.id = "progress";
-    
+
     score.id = "score";
     score.textContent = `SCORE: 00000000`;
 
@@ -51,9 +70,9 @@ function click() {
     let gameButton = document.querySelector("button");
     let score = document.querySelector("#score");
 
-    let top = Math.floor(Math.random() * (60 - 10) + 10);
-    let left = Math.floor(Math.random() * (79 - 20) + 20);
-    gameButton.textContent = "I AM THE BIGGEST BUTTON MOTHERFUCKER";
+    let top = Math.floor(Math.random() * (56 - 10) + 10);
+    let left = Math.floor(Math.random() * (59 - 27) + 27);
+    gameButton.textContent = words;
     gameButton.style.top = `${top}%`;
     gameButton.style.left = `${left}%`;
 
