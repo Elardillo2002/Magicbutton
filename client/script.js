@@ -2,41 +2,33 @@
 //     let startButton = document.querySelector("button");
 //     startButton.remove();
 //     Game();
+//     startTimer();
 // }
 
 let deadChance = 100;
 let deadChanceBar = deadChance * 0.4 + 0.2;
 let points = 0;
 let words = "";
+let time = 0;
+let timer;
 
 function ajax(options) {
-    const {url, method, success, data} = options;
+    const {success, data} = options;
     const conexion = new XMLHttpRequest();
     conexion.addEventListener("load", e => {
         if (conexion.status >= 200 && conexion.status < 300) {
             success(JSON.parse(conexion.response));
         }
     });
-    conexion.open(method || "GET", url, false);
+    conexion.open("GET", "http://localhost:3000/words", false);
     conexion.setRequestHeader("Content-type", "application/json; charset=utf-8");
     conexion.send(JSON.stringify(data));
 }
 
-
-ajax({
-    url: "http://localhost:3000/words", success: (response) => {
-        buttonWord(response);
-    }
-});
-
 function buttonWord(response) {
-
-    // response.forEach(element => {
-    //     words = element.words[0].text;
-    // });
-
     const index = Math.floor(Math.random() * response.length);
     words = response[index].text;
+    time = response[index].time;
 }
 
 function Game() {
@@ -48,7 +40,7 @@ function Game() {
     let left = Math.floor(Math.random() * (59 - 27) + 27);
 
     gameButton.id = "gameButton";
-    gameButton.textContent = words;
+    gameButton.textContent = "+10";
     gameButton.style.top = `${top}%`;
     gameButton.style.left = `${left}%`;
     gameButton.addEventListener("click", click);
@@ -67,18 +59,33 @@ function Game() {
 }
 
 function click() {
-    let gameButton = document.querySelector("button");
-    let score = document.querySelector("#score");
+    ajax({
+        url: "http://localhost:3000/words", 
+        success: (response) => {
+            buttonWord(response);
 
-    let top = Math.floor(Math.random() * (56 - 10) + 10);
-    let left = Math.floor(Math.random() * (59 - 27) + 27);
-    gameButton.textContent = words;
-    gameButton.style.top = `${top}%`;
-    gameButton.style.left = `${left}%`;
+            let gameButton = document.querySelector("button");
+            let score = document.querySelector("#score");
 
-    points = points + 10;
-    let scoreText = String(points).padStart(8, '0');
-    score.textContent = `SCORE: ${scoreText}`;
+            let top = Math.floor(Math.random() * (56 - 10) + 10);
+            let left = Math.floor(Math.random() * (59 - 27) + 27);
+            gameButton.textContent = words;
+            gameButton.style.top = `${top}%`;
+            gameButton.style.left = `${left}%`;
+
+            points = points + 10;
+            let scoreText = String(points).padStart(8, '0');
+            score.textContent = `SCORE: ${scoreText}`;
+
+            startTimer();
+        }
+    });
+}
+
+function startTimer() {
+    timer = setTimeout(() => {
+        click();
+    }, time);
 }
 
 // setInterval(click, 500);
