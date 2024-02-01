@@ -6,6 +6,14 @@ body {
     height: 100%;
 }
 
+h1 {
+    position: fixed;
+    top: 33%;
+    left: 31%;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 4em;
+}
+
 #startButton {
     font-size: 40px;
     border-radius: 10px;
@@ -20,6 +28,7 @@ body {
     font-family: 'Play', sans-serif;
     padding: 7px;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 #progressBar {
@@ -45,4 +54,8 @@ body {
     top: 70%;
     left: 27%;
     font-family: 'Press Start 2P', system-ui;
+}
+
+#survivalChance {
+    
 }
