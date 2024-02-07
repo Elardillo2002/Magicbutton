@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Play&family=Press+Start+2P&display=swap');
 
+* {
+    user-select: none;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -57,5 +61,5 @@ h1 {
 }
 
 #survivalChance {
-    
+
 }

@@ -1,5 +1,7 @@
 <?php
 
+namespace models;
+
 class Player
 {
     private int $id;
