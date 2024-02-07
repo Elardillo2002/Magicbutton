@@ -1,64 +1,64 @@
 {
-    "words": [
-      {
-        "text": "+1",
-        "time": 750
-      },
-      {
-        "text": "Here",
-        "time": 750
-      },
-      {
-        "text": "Click me!",
-        "time": 750
-      },
-      {
-        "text": "Click",
-        "time": 750
-      },
-      {
-        "text": "I'm a big button",
-        "time": 750
-      },
-      {
-        "text": "I AM THE BIGGEST BUTTON MOTHERFUCKER",
-        "time": 750
-      },
-      {
-        "text": "Hi",
-        "time": 750
-      },
-      {
-        "text": "Add one",
-        "time": 750
-      },
-      {
-        "text": "You're in time",
-        "time": 750
-      },
-      {
-        "text": "One point",
-        "time": 750
-      },
-      {
-        "text": "You're great",
-        "time": 750
-      },
-      {
-        "text": "Come on, push me!",
-        "time": 750
-      },
-      {
-        "text": "Leviòsa",
-        "time": 750
-      },
-      {
-        "text": "Leviosá",
-        "time": 750
-      },
-      {
-        "text": "-1%",
-        "time": 750
-      }
-    ]
-  }
+  "words": [
+    {
+      "text": "+1",
+      "time": 900
+    },
+    {
+      "text": "Here",
+      "time": 900
+    },
+    {
+      "text": "Click me!",
+      "time": 900
+    },
+    {
+      "text": "Click",
+      "time": 900
+    },
+    {
+      "text": "I'm a big button",
+      "time": 900
+    },
+    {
+      "text": "I AM THE BIGGEST BUTTON MOTHERFUCKER",
+      "time": 900
+    },
+    {
+      "text": "Hi",
+      "time": 900
+    },
+    {
+      "text": "Add one",
+      "time": 900
+    },
+    {
+      "text": "You're in time",
+      "time": 900
+    },
+    {
+      "text": "One point",
+      "time": 900
+    },
+    {
+      "text": "You're great",
+      "time": 900
+    },
+    {
+      "text": "Come on, push me!",
+      "time": 900
+    },
+    {
+      "text": "Leviòsa",
+      "time": 900
+    },
+    {
+      "text": "Leviosá",
+      "time": 900
+    },
+    {
+      "text": "-1%",
+      "time": 900
+    }
+  ]
+}
